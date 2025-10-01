@@ -1,0 +1,5 @@
+dotnet ef migrations add InitalCreate -p Persistence -s API
+
+dotnet ef database update -p Persistence -s API
+
+dotnet ef database drop -p Persistence -s API

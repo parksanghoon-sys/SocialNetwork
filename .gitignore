@@ -364,3 +364,19 @@ FodyWeavers.xsd
 
 # Course Assets folder
 CourseAssets/
+# Windows shortcuts
+*.lnk
+# Vim temporary swap files
+*.swp
+API/appsettings.json
+API/reactivities.db
+
+# content below from: https://github.com/github/gitignore/blob/main/Global/Windows.gitignore
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+reactivities.db
+
+.claude/
