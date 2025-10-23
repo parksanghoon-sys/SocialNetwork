@@ -25,9 +25,11 @@ npm create vite@latest
 
 y
 
-client
+client : 프로젝트이름
 
 React
 
-TypeScript + SWC
+TypeScript + SWC 선택: TypeScript를 사용하겟다, 속도빠른버젼
+
+npm run dev 로실행
 ```
