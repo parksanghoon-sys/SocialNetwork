@@ -1,14 +1,14 @@
 import { List, ListItem, ListItemText, Typography } from "@mui/material";
+import axios from "axios";
 import { useEffect, useState } from "react"
 
 function App() {  
   const [activities, setActivities] = useState<Activity[]>([]);
   // 구성요소라 로드될때 일어나는 일
   useEffect(() => 
-  {
-    fetch('https://localhost:5001/api/activities')
-    .then(response => response.json())
-    .then(data => setActivities(data))    
+  {    
+    axios.get<Activity[]>('https://localhost:5001/api/activities')    
+    .then(response => setActivities(response.data))    
 
     return () => {}
   }, [])
