@@ -485,3 +485,6 @@ $RECYCLE.BIN/
 src/API/appsettings.json
 src/API/reactivities.db
 .claude/
+src/API/reactivities.db-shm
+src/API/reactivities.db-wal
+.vscode/settings.json

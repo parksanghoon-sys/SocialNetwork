@@ -2,10 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 using Persistence;
 using Domain;
 using Microsoft.EntityFrameworkCore;
+using MediatR;
+using Application.Activities.Queries;
+using Application.Activities.Commands;
 
 namespace API.Controllers;
 
-public class ActivitiesController(AppDbContext context) : BaseApiController
+public class ActivitiesController : BaseApiController
 {
     /// <summary>
     /// 웹서버의 스레드가 많으 요청시에는 에러를 발생시킬수 있다. 503 에러
@@ -17,15 +20,20 @@ public class ActivitiesController(AppDbContext context) : BaseApiController
     [HttpGet]
     public async Task<ActionResult<List<Activity>>> GetActivities()
     {
-        return await context.Activities.ToListAsync();
+        return await Mediator.Send(new GetActivityList.Query());
     }
     [HttpGet("{id}")]
     public async Task<ActionResult<Activity>> GetActivity(string id)
     {
-        var activity = await context.Activities.FindAsync(id);
+        var activity = await Mediator.Send(new GetActivityDetails.Query { Id = id });
 
         if (activity == null) return NotFound();
-        
+
         return activity;
+    }
+    [HttpPost]
+    public async Task<ActionResult<string>> CreateActivity(Activity activity)
+    {
+        return await Mediator.Send(new CreateActivity.Command { Activity = activity });       
     }
 }
