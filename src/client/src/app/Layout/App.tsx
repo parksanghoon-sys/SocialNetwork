@@ -1,6 +1,7 @@
-import { List, ListItem, ListItemText, Typography } from "@mui/material";
+import { CssBaseline, List, ListItem, ListItemText } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react"
+import NavBar from "./NavBar";
 
 function App() {  
   const [activities, setActivities] = useState<Activity[]>([]);
@@ -16,7 +17,8 @@ function App() {
   // 이때 후크를 useState라고한다 그럼 react 내에 저장이 가능하다  
   return (    
     <>
-      <Typography variant="h3">Reactivities</Typography>    
+    <CssBaseline/>
+      <NavBar />
         <List>
           {activities.map((activity) =>(
             <ListItem key={activity.id}>

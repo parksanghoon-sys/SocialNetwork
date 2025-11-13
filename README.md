@@ -148,13 +148,24 @@ function Timer() {
 ## Section 4 CQRS 및 중재자를 사용하여 CRUD 애플리케이션 만들기
 
 * 클린아키텍쳐 패턴을 활용
+
   * 종송석의 규칙을 따라야한다
   * 각 단계에 따라 캡슐화가 되어야한다.
   * 공통적인 Entity 가있고 그것을 Usecase 작업단위에서 사용을한다 이건 예를들면 Reposity 패턴을 이용한 CRUD 이고 그다음 Presenters계층에서는 실제 db 그리고 UI 계층으로나뉜다
 * CQRS 중재자 패턴을 이용
+
   * 명령 쿼리 책임분리
   * 명령은 뭔가를 해야한다, 즉 상태를 수정해야하며 값을 반환해서는 안된다.
     * 예를들면 활등을 만들고 수정한다.
   * 쿼리는 질문에 답이다.
     * 상태를 수정하지 않고 문제의
 * CRUD 작업에 대한 핸들러를 만든다
+* CRUD 컨트롤러 GET, POST, PUT , DELTE를 만들어 RESTAPI를 구성한다.
+
+## Section 5 API를 가져와서 React로 FE 구성하기
+
+* 반응형 애플리케이션을 구성
+* TypeScript 를 도입 기본적으로 타입을 강제해 실행 오류를 줄이기 위함
+* 머터리얼 UI 구성
+* 리엑트의 Basic Forms 구성
+* Client의 CRUD 구성
