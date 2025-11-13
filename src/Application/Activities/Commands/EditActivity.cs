@@ -17,6 +17,7 @@ public class EditActivity
                                 ?? throw new Exception("Activity not found");
 
             mapper.Map(request.Activity, activity);
+            
             await context.SaveChangesAsync(cancellationToken);                            
         }
     }
