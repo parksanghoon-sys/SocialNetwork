@@ -1,8 +1,9 @@
-import { Container, CssBaseline } from "@mui/material";
+import { Box, Container, CssBaseline } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react"
 import NavBar from "./NavBar";
-import ActivityDashboard from "../../features/activities/ActivityDashboard";
+import ActivityDashboard from "../../features/activities/dashboard/ActivityDashboard";
+
 
 function App() {
   const [activities, setActivities] = useState<Activity[]>([]);
@@ -16,7 +17,7 @@ function App() {
   // 구성요소에서 가져올 데이터터를 기억하는 기능이 javascript에는 없기 떄문에 무언가를 기억하려면 반응 기능에 연결해야한다 
   // 이때 후크를 useState라고한다 그럼 react 내에 저장이 가능하다  
   return (
-    <>
+    <Box sx={{bgcolor: '#eeeeee'}}>
       <CssBaseline />
       <NavBar />
         {/* | 값      | 최대 너비(px) |
@@ -35,7 +36,7 @@ function App() {
           <ActivityDashboard activities={activities} />
       </Container>
 
-    </>
+    </Box>
   )
 }
 
